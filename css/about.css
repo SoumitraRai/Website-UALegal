@@ -1,0 +1,412 @@
+/**
+ * About Page Specific Styles for UA Legal Website
+ * This file contains styles specific to the about page.
+ * 
+ * Table of Contents:
+ * 1. Page Banner
+ * 2. Our Story Section
+ * 3. Vision & Mission
+ * 4. Core Values
+ * 5. Accolades Section
+ * 6. Community Impact
+ * 7. Responsive Adjustments
+ */
+
+/* ===== 1. Page Banner ===== */
+.page-banner {
+    background: linear-gradient(rgba(10, 35, 66, 0.8), rgba(10, 35, 66, 0.8)), url('../assets/images/about-banner.jpg') center/cover no-repeat;
+    padding: 150px 0 60px;
+    text-align: center;
+    color: white;
+}
+
+.page-banner h1 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.breadcrumb {
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+.breadcrumb a {
+    color: white;
+}
+
+.breadcrumb a:hover {
+    color: var(--accent-color);
+}
+
+.separator {
+    margin: 0 10px;
+}
+
+.current-page {
+    color: var(--accent-color);
+}
+
+/* ===== 2. Our Story Section ===== */
+.section-padding {
+    padding: 100px 0;
+}
+
+.lead-text {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.two-column-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.founder-signature {
+    margin-top: 40px;
+}
+
+.signature-img {
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.signature-name {
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.signature-designation {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.about-image-container {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: 30px;
+    right: -20px;
+    background-color: var(--accent-color);
+    color: white;
+    text-align: center;
+    padding: 15px 25px;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+}
+
+.experience-badge .years {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.experience-badge .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===== 3. Vision & Mission ===== */
+.bg-light {
+    background-color: var(--light-color);
+}
+
+.center {
+    text-align: center;
+}
+
+.vision-mission .two-column-grid {
+    gap: 30px;
+}
+
+.vision-box,
+.mission-box {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    height: 100%;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.vision-box:hover,
+.mission-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: var(--accent-color);
+}
+
+.box-icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--light-color);
+    color: var(--accent-color);
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    border-radius: 50%;
+}
+
+/* ===== 4. Core Values ===== */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.value-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: var(--accent-color);
+}
+
+.value-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--light-color);
+    color: var(--accent-color);
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+
+.value-card h3 {
+    margin-bottom: 15px;
+}
+
+.value-card p {
+    margin-bottom: 0;
+    color: var(--text-light);
+}
+
+/* ===== 5. Accolades Section ===== */
+.bg-premium {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.light-text h2 {
+    color: white;
+}
+
+.light-text .ornament span {
+    background-color: var(--accent-color);
+}
+
+.light-text .ornament span::before,
+.light-text .ornament span::after {
+    background-color: var(--accent-color);
+}
+
+.accolades-slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.accolade-item {
+    flex: 0 0 100%;
+    padding: 40px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.accolade-logo {
+    height: 100px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accolade-logo img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.accolade-item h4 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.accolade-item p {
+    opacity: 0.8;
+    margin-bottom: 0;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.slider-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.slider-btn:hover {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 20px;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.3);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.slider-dot.active {
+    background-color: var(--accent-color);
+}
+
+/* ===== 6. Community Impact ===== */
+.section-intro {
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.impact-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.impact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.impact-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.impact-content {
+    padding: 25px;
+}
+
+.impact-content h3 {
+    margin-bottom: 15px;
+}
+
+.impact-content p {
+    margin-bottom: 0;
+    color: var(--text-light);
+}
+
+/* ===== 7. Responsive Adjustments ===== */
+@media screen and (max-width: 992px) {
+    .two-column-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .section-padding {
+        padding: 70px 0;
+    }
+    
+    .impact-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .page-banner {
+        padding: 120px 0 40px;
+    }
+    
+    .experience-badge {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
+    }
+    
+    .experience-badge .years {
+        font-size: 1.75rem;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-intro {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .section-padding {
+        padding: 50px 0;
+    }
+    
+    .accolade-item {
+        padding: 30px 20px;
+    }
+}

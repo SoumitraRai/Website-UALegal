@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: common.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: common.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Common JavaScript functionality for UA Legal Website
+ * This file contains functionality used across multiple pages.
+ * 
+ * @file common.js
+ * @author Your Name
+ * @version 1.0.0
+ */
+
+/**
+ * Executes when the DOM is fully loaded
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize mobile navigation
+    initMobileNav();
+    
+    // Initialize sticky header
+    initStickyHeader();
+    
+    // Initialize smooth scrolling
+    initSmoothScroll();
+});
+
+/**
+ * Initializes the mobile navigation functionality
+ */
+function initMobileNav() {
+    // Get navigation elements
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    // Exit if elements don't exist
+    if (!navToggle || !navMenu) return;
+    
+    // Toggle navigation menu when button is clicked
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        
+        // Create animated hamburger effect
+        const spans = navToggle.querySelectorAll('span');
+        if (navMenu.classList.contains('active')) {
+            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+        } else {
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        }
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!navToggle.contains(event.target) &amp;&amp; 
+            !navMenu.contains(event.target) &amp;&amp; 
+            navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            
+            // Reset hamburger icon
+            const spans = navToggle.querySelectorAll('span');
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        }
+    });
+}
+
+/**
+ * Initializes sticky header behavior on scroll
+ */
+function initStickyHeader() {
+    const header = document.querySelector('header');
+    const scrollThreshold = 100; // Pixels to scroll before header becomes sticky
+    
+    // Exit if header doesn't exist
+    if (!header) return;
+    
+    // Function to handle scroll event
+    function handleScroll() {
+        if (window.scrollY > scrollThreshold) {
+            header.classList.add('sticky');
+        } else {
+            header.classList.remove('sticky');
+        }
+    }
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    
+    // Initial check in case page is loaded already scrolled
+    handleScroll();
+}
+
+/**
+ * Initializes smooth scrolling for anchor links
+ */
+function initSmoothScroll() {
+    // Get all anchor links that point to ID on the page
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            
+            // Skip if href is just "#"
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                // Get header height for offset
+                const header = document.querySelector('header');
+                const headerOffset = header ? header.offsetHeight : 0;
+                
+                // Calculate position accounting for header
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = targetPosition - headerOffset;
+                
+                // Smooth scroll to element
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const navMenu = document.querySelector('.nav-menu');
+                if (navMenu &amp;&amp; navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    
+                    // Reset hamburger icon
+                    const navToggle = document.querySelector('.nav-toggle');
+                    if (navToggle) {
+                        const spans = navToggle.querySelectorAll('span');
+                        spans[0].style.transform = 'none';
+                        spans[1].style.opacity = '1';
+                        spans[2].style.transform = 'none';
+                    }
+                }
+            }
+        });
+    });
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#currentTestimonialIndex">currentTestimonialIndex</a></li><li><a href="global.html#initAccoladesSlider">initAccoladesSlider</a></li><li><a href="global.html#initContactForm">initContactForm</a></li><li><a href="global.html#initFaqAccordion">initFaqAccordion</a></li><li><a href="global.html#initMobileNav">initMobileNav</a></li><li><a href="global.html#initPracticeFilter">initPracticeFilter</a></li><li><a href="global.html#initProfileModal">initProfileModal</a></li><li><a href="global.html#initServicesTabs">initServicesTabs</a></li><li><a href="global.html#initSmoothScroll">initSmoothScroll</a></li><li><a href="global.html#initStickyHeader">initStickyHeader</a></li><li><a href="global.html#initTestimonialSlider">initTestimonialSlider</a></li><li><a href="global.html#renderCurrentTestimonial">renderCurrentTestimonial</a></li><li><a href="global.html#showNextTestimonial">showNextTestimonial</a></li><li><a href="global.html#showPreviousTestimonial">showPreviousTestimonial</a></li><li><a href="global.html#showTestimonial">showTestimonial</a></li><li><a href="global.html#testimonials">testimonials</a></li><li><a href="global.html#updateIndicators">updateIndicators</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Mon Jun 23 2025 00:01:29 GMT+0530 (India Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

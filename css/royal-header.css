@@ -1,0 +1,85 @@
+/**
+ * More Royal Customizations for UA Legal Website
+ * 
+ * This file provides additional royal styling for the header, 
+ * including enhanced z-index handling and more sophisticated styling
+ * for the navigation.
+ */
+
+/* Enhanced Fixed Header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2000; /* Very high z-index to ensure it stays on top */
+}
+
+/* Royal Top Bar Enhancement */
+.top-bar {
+    background: linear-gradient(90deg, #1a2042, #262E4D);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Royal Main Navigation */
+.main-nav {
+    background-color: rgba(255, 255, 255, 0.97);
+}
+
+.main-nav .container {
+    padding: 15px 0;
+}
+
+/* Logo Enhancement */
+.logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    color: #1a2042;
+}
+
+/* Royal Navigation Menu */
+.nav-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: #1a2042;
+    letter-spacing: 0.5px;
+}
+
+.nav-menu a::after {
+    background-color: #d4af37;
+    height: 2px;
+}
+
+/* Ensure content falls below fixed header */
+main, section:first-of-type:not(.hero):not(.royal-hero) {
+    padding-top: 120px;
+}
+
+/* For pages using banner structure */
+.page-banner {
+    padding-top: 175px;
+}
+
+/* Hero Section content positioning */
+.hero, .royal-hero {
+    padding-top: 120px;
+}
+
+@media screen and (max-width: 992px) {
+    main, section:first-of-type:not(.hero):not(.royal-hero) {
+        padding-top: 100px;
+    }
+    
+    .page-banner {
+        padding-top: 150px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main, section:first-of-type:not(.hero):not(.royal-hero) {
+        padding-top: 80px;
+    }
+    
+    .page-banner {
+        padding-top: 140px;
+    }
+}

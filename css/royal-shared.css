@@ -1,0 +1,424 @@
+/**
+ * Royal Shared Styles for UA Legal Website
+ * This file contains shared royal elements and decorative components
+ * to be imported by other CSS files.
+ * 
+ * Table of Contents:
+ * 1. Royal Color Variables
+ * 2. Royal Typography
+ * 3. Ornamental Elements
+ * 4. Decorative Borders & Dividers
+ * 5. Button Styles
+ * 6. Royal Animations
+ * 7. Page Structure & Layout
+ */
+
+/* ===== 1. Royal Color Variables ===== */
+:root {
+    --royal-primary: #1a2042;
+    --royal-primary-dark: #131731;
+    --royal-primary-light: #262E4D;
+    --royal-gold: #d4af37;
+    --royal-gold-light: #e6cc7f;
+    --royal-gold-dark: #a68829;
+    --royal-cream: #f8f5f0;
+    --royal-cream-dark: #eae5d9;
+    --royal-black: #222;
+    --royal-text: #333;
+    --royal-text-light: #555;
+    --royal-shadow: 0 10px 30px rgba(26, 32, 66, 0.1);
+    --royal-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* ===== 2. Royal Typography ===== */
+.royal-heading {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--royal-primary);
+    position: relative;
+    display: inline-block;
+}
+
+.royal-heading-lg {
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.royal-heading-md {
+    font-size: 2.2rem;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.royal-heading-sm {
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.royal-heading span {
+    color: var(--royal-gold);
+}
+
+.royal-subheading {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--royal-gold);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.royal-text {
+    color: var(--royal-text);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.royal-text-light {
+    color: var(--royal-text-light);
+    line-height: 1.7;
+}
+
+/* ===== 3. Ornamental Elements ===== */
+.royal-ornament {
+    position: relative;
+}
+
+.royal-ornament::before,
+.royal-ornament::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.royal-ornament::before {
+    background-image: url('../assets/images/royal-ornament-left.png');
+    left: -55px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.royal-ornament::after {
+    background-image: url('../assets/images/royal-ornament-right.png');
+    right: -55px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.corner-ornament {
+    position: relative;
+}
+
+.corner-ornament::before {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background-image: url('../assets/images/royal-corner-ornament.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.corner-top-left::before {
+    top: -90px;
+    left: -90px;
+}
+
+.corner-top-right::before {
+    top: -90px;
+    right: -90px;
+    transform: rotate(90deg);
+}
+
+.corner-bottom-left::before {
+    bottom: -90px;
+    left: -90px;
+    transform: rotate(270deg);
+}
+
+.corner-bottom-right::before {
+    bottom: -90px;
+    right: -90px;
+    transform: rotate(180deg);
+}
+
+/* ===== 4. Decorative Borders & Dividers ===== */
+.royal-border {
+    position: relative;
+}
+
+.royal-border::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    pointer-events: none;
+}
+
+.royal-divider {
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--royal-gold), transparent);
+    margin: 30px auto;
+}
+
+.royal-divider-left {
+    margin-left: 0;
+    background: linear-gradient(90deg, var(--royal-gold), transparent);
+}
+
+.royal-divider-right {
+    margin-right: 0;
+    background: linear-gradient(90deg, transparent, var(--royal-gold));
+}
+
+.royal-section-divider {
+    position: relative;
+    height: 10px;
+    background: var(--royal-gold);
+    margin: 100px 0;
+}
+
+.royal-section-divider::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 40px;
+    background: white;
+    clip-path: polygon(0 50%, 50% 0, 100% 50%, 50% 100%);
+}
+
+.royal-section-divider::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 40px;
+    background: white;
+    clip-path: polygon(0 50%, 50% 0, 100% 50%, 50% 100%);
+}
+
+/* ===== 5. Button Styles ===== */
+.royal-btn {
+    display: inline-block;
+    padding: 16px 35px;
+    background: transparent;
+    color: var(--royal-primary);
+    border: 1px solid var(--royal-gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--royal-transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    text-transform: uppercase;
+}
+
+.royal-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--royal-gold);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.royal-btn:hover {
+    color: var(--royal-primary);
+}
+
+.royal-btn:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.royal-btn-dark {
+    background: var(--royal-primary);
+    color: var(--royal-gold);
+}
+
+.royal-btn-dark:hover {
+    color: var(--royal-primary);
+}
+
+.royal-btn-gold {
+    background: var(--royal-gold);
+    color: var(--royal-primary);
+    border-color: var(--royal-gold);
+}
+
+.royal-btn-gold::before {
+    background: var(--royal-primary);
+}
+
+.royal-btn-gold:hover {
+    color: var(--royal-gold);
+}
+
+/* ===== 6. Royal Animations ===== */
+@keyframes royalFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes royalShine {
+    0% { left: -100%; opacity: 0.7; }
+    100% { left: 100%; opacity: 0; }
+}
+
+.royal-fade-in {
+    animation: royalFadeIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.royal-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.royal-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: skewX(-25deg);
+    animation: royalShine 6s infinite;
+}
+
+/* ===== 7. Page Structure & Layout ===== */
+/* These styles ensure proper spacing between fixed header and page content */
+.royal-page-content {
+    padding-top: 140px; /* Base padding to account for fixed header */
+}
+
+.royal-section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.royal-section-sm {
+    padding: 70px 0;
+}
+
+.royal-section-lg {
+    padding: 120px 0;
+}
+
+/* Royal Hero Section */
+.royal-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(26, 32, 66, 0.8), rgba(26, 32, 66, 0.85)), 
+                url('../assets/images/hero-background.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    position: relative;
+    padding-top: 120px; /* Adjusted for fixed header */
+    overflow: hidden;
+}
+
+.royal-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/images/indian-pattern-overlay.png');
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.royal-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.royal-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 25px;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.royal-hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Responsive adjustments for page structure */
+@media screen and (max-width: 992px) {
+    .royal-page-content {
+        padding-top: 120px;
+    }
+    
+    .royal-section {
+        padding: 80px 0;
+    }
+    
+    .royal-section-sm {
+        padding: 50px 0;
+    }
+    
+    .royal-section-lg {
+        padding: 100px 0;
+    }
+    
+    .royal-hero {
+        min-height: 80vh;
+        padding-top: 100px;
+    }
+    
+    .royal-hero h1 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .royal-page-content {
+        padding-top: 100px;
+    }
+    
+    .royal-hero {
+        min-height: 70vh;
+        padding-top: 80px;
+    }
+    
+    .royal-hero h1 {
+        font-size: 2.5rem;
+    }
+}
